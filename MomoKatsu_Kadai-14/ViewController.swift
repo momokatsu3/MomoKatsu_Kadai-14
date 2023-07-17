@@ -32,13 +32,10 @@ class ViewController: UIViewController {
 
     @IBAction func inputNameTextField(unwindSegue: UIStoryboardSegue) {
 
-        guard let AddItemViewController = unwindSegue.source as? AddItemViewController else { return }
-
-        // AddItemViewController で追加した内容を表示
-        //print("追加内容：'", AddItemViewController.inputName as Any, "'")
+        guard let addItemViewController = unwindSegue.source as? AddItemViewController else { return }
 
         // 追加した内容を構造体へ追加
-        selectItems.append(ItemValue(name: AddItemViewController.inputName  as Any as! String, check: false))
+        selectItems.append(ItemValue(name: addItemViewController.inputName ?? "", check: false))
         //print("追加入力後のデータ個数：", selectItems.count)
         //print(selectItems)
 

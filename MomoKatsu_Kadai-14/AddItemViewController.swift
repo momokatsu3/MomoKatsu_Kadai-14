@@ -9,15 +9,14 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
-    private(set) var inputName: String??
+    private(set) var inputName: String?
 
     // 追加名前入力用テキストフィールド
     @IBOutlet weak var nameTextField: UITextField!
 
     // セーブボタンを選択した場合
     @IBAction func tapSaveButtonItems(_ sender: Any) {
-        inputName = nameTextField.text!
-        //print(inputName!!)
+        inputName = nameTextField.text
         performSegue(withIdentifier: "unwindSegueInputName", sender: nil)
     }
 
@@ -26,10 +25,4 @@ class AddItemViewController: UIViewController {
         // モーダル遷移で元に画面遷移
         dismiss(animated: true, completion: nil)
     }
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 }
